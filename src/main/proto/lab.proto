@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.br.labgrpc.service;
+
+option java_package = "com.br.labgrpc.stubs";
+option java_multiple_files = true;
+
+message LabGrpcRequest {
+    optional string name = 1;
+}
+
+message LabGrpcResponse {
+    string message = 1;
+}
+
+service LabGrpcService {
+    rpc SayHello(LabGrpcRequest) returns (LabGrpcResponse);
+}
